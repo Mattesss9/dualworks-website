@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="dark" lang="cs">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title id="pageTitle">DualWorks s.r.o. - Svařování, montáže, zámečnictví</title>
+    
+    <!-- Propojení na Tailwind a Fonty -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <!-- Font Awesome pro ikony (Použito pro konzistentní industriální styl) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#007BFF", /* Naše akcentová modrá */
+                        "secondary-dark": "#283039", /* Tmavá ocelová šedá */
+                        "steel-gray": "#6c757d", /* Pro šedé texty */
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        .fa-2x { font-size: 2em; }
+    </style>
+</head>
+<body class="bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+    <div class="layout-container flex h-full grow flex-col">
+        <div class="flex flex-1 justify-center px-4 md:px-10 lg:px-40 py-5">
+            <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+                
+                <!-- HLAVIČKA A NAVIGACE -->
+                <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-[#283039] px-4 sm:px-10 py-3 sticky top-0 bg-background-dark z-50">
+                    <div class="flex items-center gap-4 text-white">
+                        <div class="size-4"><svg class="text-primary" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z" fill="currentColor"></path></svg></div>
+                        <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">DualWorks s.r.o.</h2>
+                    </div>
+                    
+                    <!-- Desktop Menu a Jazykové Přepínání -->
+                    <div class="hidden md:flex flex-1 justify-end gap-8">
+                        <div class="flex items-center gap-9">
+                            <a class="text-white text-sm font-medium leading-normal" href="#about" id="navAbout">O nás</a>
+                            <a class="text-white text-sm font-medium leading-normal" href="#projects" id="navProjects">Projekty</a>
+                            <a class="text-white text-sm font-medium leading-normal" href="#career" id="navCareer">Kariéra</a>
+                            <a class="text-white text-sm font-medium leading-normal" href="#contact" id="navContact">Kontakt</a>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button id="lang-cz" onclick="setLanguage('cz')" class="text-white text-sm font-bold leading-normal tracking-[0.015em]">CZ</button>
+                            <span class="text-gray-500">|</span>
+                            <button id="lang-en" onclick="setLanguage('en')" class="text-white text-sm font-bold leading-normal tracking-[0.015em] opacity-50">EN</button>
+                            <span class="text-gray-500">|</span>
+                            <button id="lang-de" onclick="setLanguage('de')" class="text-white text-sm font-bold leading-normal tracking-[0.015em] opacity-50">DE</button>
+                        </div>
+                    </div>
+                    <button class="md:hidden flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                </header>
+                
+                <main class="flex-1">
+                    <div class="relative @container">
+                        <div class="@[480px]:p-4">
+                            
+                            <!-- 1. HERO SEKCE -->
+                            <div class="relative flex min-h-[calc(100vh-150px)] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-center justify-center p-4 overflow-hidden">
+                                <video autoplay="" class="absolute z-0 w-auto min-w-full min-h-full max-w-none" loop="" muted="" playsinline=""><source src="https://videos.pexels.com/video-files/5666249/5666249-hd_1920_1080_25fps.mp4" type="video/mp4"/>Your browser does not support the video tag.</video>
+                                <div class="absolute inset-0 bg-black/60 z-10"></div>
+                                <div class="relative z-20 flex flex-col gap-2 text-center">
+                                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]" id="heroH1">Naše práce drží svět pohromadě.</h1>
+                                    <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-2xl mx-auto" id="heroH2">DualWorks s.r.o. – váš partner pro kvalitní průmyslové montáže, svařování a zámečnické práce v Evropě.</h2>
+                                </div>
+                                <div class="relative z-20 flex-wrap gap-3 flex justify-center">
+                                    <a href="#contact" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]" id="ctaInquiry"><span class="truncate">Zadat poptávku</span></a>
+                                    <a href="#career" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-secondary-dark border-2 border-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]" id="ctaCareer"><span class="truncate">Přidat se k týmu</span></a>
+                                </div>
+                            </div>
+                            
+                            <!-- 2. SEKCE O NÁS, SLUŽBY a VÝHODY (Konsolidováno) -->
+                            <section id="about" class="py-20 bg-background-dark text-white">
+                                <div class="p-4 @container">
+                                    
+                                    <!-- 2A. Hlavní část O nás -->
+                                    <div class="grid grid-cols-1 @[480px]:grid-cols-2 gap-12 items-center">
+                                        <div class="flex flex-col gap-4">
+                                            <h2 class="text-white text-3xl font-bold" id="aboutH2_new">Založeno na zkušenostech, zaměřeno na budoucnost.</h2>
+                                            <div class="text-steel-gray" id="aboutText_new">
+                                                <p>DualWorks s.r.o. byla založena v Praze v roce 2025, ale naše kořeny sahají mnohem hlouběji. Vznikli jsme z dlouholeté praxe expertů v oboru, spojujeme tradiční řemeslo s nejmodernějšími technologiemi.</p>
+                                                <p>Jsme hrdí na to, že působíme jak v České republice, tak na mezinárodním trhu, a dodáváme našim klientům prvotřídní řešení.</p>
+                                            </div>
+                                        </div>
+                                        <div class="relative">
+                                            <!-- Placeholder pro obrázek týmu -->
+                                            <img id="aboutImage_new" alt="Profesionální Team" class="rounded-lg object-cover w-full h-full min-h-64" src="images/about-us.png"/>
+                                            <a href="#about" class="mt-8 inline-block text-primary hover:text-white font-bold absolute bottom-0 left-0 bg-background-dark/80 p-2 rounded-br-lg rounded-tl-lg" id="ctaMoreAbout"></a>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 2B. Speciální oblasti (SLUŽBY) -->
+                                    <div class="flex flex-col gap-10 px-4 py-10 mt-16 bg-[#283039] rounded-xl">
+                                        <div class="flex flex-col gap-4 text-center">
+                                            <h2 class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto" id="specialH2">Naše speciální oblasti</h2>
+                                            <p class="text-steel-gray dark:text-gray-300 text-base font-normal leading-normal max-w-[720px] mx-auto" id="specialPerex">Nabízíme komplexní řešení v oblastech průmyslových montáží, potrubních systémů, ocelových konstrukcí a svařovacích prací.</p>
+                                        </div>
+                                        
+                                        <!-- Grid služeb -->
+                                        <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-0">
+                                            <div class="flex flex-1 gap-3 rounded-lg border border-[#3b4754] bg-background-dark/20 p-4 flex-col items-center text-center">
+                                                <div class="text-primary text-4xl"><i class="fas fa-industry"></i></div>
+                                                <div class="flex flex-col gap-1"><h3 class="text-white text-base font-bold leading-tight" id="special1H">Industriální montáže</h3><p class="text-steel-gray text-sm font-normal leading-normal" id="special1P">Profesionální montáž průmyslových zařízení a strojů.</p></div>
+                                            </div>
+                                            <div class="flex flex-1 gap-3 rounded-lg border border-[#3b4754] bg-background-dark/20 p-4 flex-col items-center text-center">
+                                                <div class="text-primary text-4xl"><i class="fas fa-pipe"></i></div>
+                                                <div class="flex flex-col gap-1"><h3 class="text-white text-base font-bold leading-tight" id="special2H">Potrubní systémy</h3><p class="text-steel-gray text-sm font-normal leading-normal" id="special2P">Plánování a instalace komplexních potrubních systémů.</p></div>
+                                            </div>
+                                            <div class="flex flex-1 gap-3 rounded-lg border border-[#3b4754] bg-background-dark/20 p-4 flex-col items-center text-center">
+                                                <div class="text-primary text-4xl"><i class="fas fa-sitemap"></i></div>
+                                                <div class="flex flex-col gap-1"><h3 class="text-white text-base font-bold leading-tight" id="special3H">Ocelové konstrukce</h3><p class="text-steel-gray text-sm font-normal leading-normal" id="special3P">Výroba a montáž robustních ocelových konstrukcí.</p></div>
+                                            </div>
+                                            <div class="flex flex-1 gap-3 rounded-lg border border-[#3b4754] bg-background-dark/20 p-4 flex-col items-center text-center">
+                                                <div class="text-primary text-4xl"><i class="fas fa-fire-alt"></i></div>
+                                                <div class="flex flex-col gap-1"><h3 class="text-white text-base font-bold leading-tight" id="special4H">Svařování</h3><p class="text-steel-gray text-sm font-normal leading-normal" id="special4P">Certifikované svařovací práce dle nejvyšších standardů.</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                  <!-- 2D. Naše Služby -->
+                                    <div class="flex flex-col gap-10 px-4 py-20 @container">
+                                        <div class="flex flex-col gap-4 text-center">
+                                            <h2 class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px] mx-auto" id="servicesH2">Naše Služby</h2>
+                                            <p class="text-steel-gray dark:text-gray-300 text-base font-normal leading-normal max-w-[720px] mx-auto" id="servicesPerex">Specializujeme se na řemeslné práce, průmyslové montáže, svařování, zámečnictví a kapacitní výpomoc pro vaše projekty.</p>
+                                        </div>
+
+                                        <!-- Grid služeb -->
+                                        <div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-6 p-0">
+                                            <!-- Svářečské práce -->
+                                            <div class="flex flex-1 gap-3 rounded-lg border border-[#3b4754] bg-background-dark/20 p-6 flex-col items-center text-center">
+                                                <div class="text-primary text-4xl"><i class="fas fa-fire-alt"></i></div>
+                                                <div class="flex flex-col gap-1">
+                                                    <h3 class="text-white text-xl font-bold leading-tight" id="service1H">Svářečské práce</h3>
+                                                    <p class="text-steel-gray text-base font-normal leading-normal" id="service1P">Certifikovaná kvalita (111, 135, 136, 141).</p>
+                                                </div>
+                                            </div>
+                                            <!-- Zámečnické práce -->
+                                            <div class="flex flex-1 gap-3 rounded-lg border border-[#3b4754] bg-background-dark/20 p-6 flex-col items-center text-center">
+                                                <div class="text-primary text-4xl"><i class="fas fa-wrench"></i></div>
+                                                <div class="flex flex-col gap-1">
+                                                    <h3 class="text-white text-xl font-bold leading-tight" id="service2H">Zámečnické práce</h3>
+                                                    <p class="text-steel-gray text-base font-normal leading-normal" id="service2P">Kompletní zámečnické a kovodělné služby na míru vašim požadavkům.</p>
+                                                </div>
+                                            </div>
+                                            <!-- Montážní práce -->
+                                            <div class="flex flex-1 gap-3 rounded-lg border border-[#3b4754] bg-background-dark/20 p-6 flex-col items-center text-center">
+                                                <div class="text-primary text-4xl"><i class="fas fa-hard-hat"></i></div>
+                                                <div class="flex flex-col gap-1">
+                                                    <h3 class="text-white text-xl font-bold leading-tight" id="service3H">Montážní práce</h3>
+                                                    <p class="text-steel-gray text-base font-normal leading-normal" id="service3P">Profesionální montážní práce v průmyslovém sektoru s důrazem na kvalitu.</p>
+                                                </div>
+                                            </div>
+                                            <!-- Broušení kovů -->
+                                            <div class="flex flex-1 gap-3 rounded-lg border border-[#3b4754] bg-background-dark/20 p-6 flex-col items-center text-center">
+                                                <div class="text-primary text-4xl"><i class="fas fa-cog"></i></div>
+                                                <div class="flex flex-col gap-1">
+                                                    <h3 class="text-white text-xl font-bold leading-tight" id="service4H">Broušení kovů</h3>
+                                                    <p class="text-steel-gray text-base font-normal leading-normal" id="service4P">Dokonalá povrchová úprava a precizní broušení kovových součástí.</p>
+                                                </div>
+                                            </div>
+                                            <!-- Kapacitní výpomoc -->
+                                            <div class="flex flex-1 gap-3 rounded-lg border border-[#3b4754] bg-background-dark/20 p-6 flex-col items-center text-center">
+                                                <div class="text-primary text-4xl"><i class="fas fa-users-cog"></i></div>
+                                                <div class="flex flex-col gap-1">
+                                                    <h3 class="text-white text-xl font-bold leading-tight" id="service5H">Kapacitní výpomoc</h3>
+                                                    <p class="text-steel-gray text-base font-normal leading-normal" id="service5P">Flexibilní posílení vašeho týmu o naše zkušené a kvalifikované řemeslníky.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 2C. Výhody s DualWorks -->
+                                    <div class="flex flex-col gap-10 px-4 py-20 @container">
+                                        <div class="flex flex-col gap-4 text-center">
+                                            <h2 class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]" id="advantagesH2_new">Proč si vybrat DualWorks?</h2>
+                                            <p class="text-steel-gray dark:text-gray-300 text-base font-normal leading-normal max-w-[720px] mx-auto" id="advantagesPerex_new">Stojíme za kvalitou, efektivitou a bezpečností každého projektu.</p>
+                                        </div>
+                                        
+                                        <!-- Grid výhod -->
+                                        <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-6 p-0">
+                                            <div class="flex flex-1 gap-3 rounded-lg bg-transparent p-4 flex-col border border-primary/50">
+                                                <div class="text-primary text-2xl"><i class="fas fa-users"></i></div>
+                                                <div class="flex flex-col gap-1"><h3 class="text-white text-base font-bold leading-tight" id="advantage1H_new">Kvalifikovaný tým</h3><p class="text-steel-gray text-sm font-normal leading-normal" id="advantage1P_new">Naši experti přinášejí dlouholeté zkušenosti a odborné znalosti.</p></div>
+                                            </div>
+                                            <div class="flex flex-1 gap-3 rounded-lg bg-transparent p-4 flex-col border border-primary/50">
+                                                <div class="text-primary text-2xl"><i class="fas fa-sync-alt"></i></div>
+                                                <div class="flex flex-col gap-1"><h3 class="text-white text-base font-bold leading-tight" id="advantage2H_new">Flexibilita</h3><p class="text-steel-gray text-sm font-normal leading-normal" id="advantage2P_new">Přizpůsobíme se flexibilně vašim požadavkům a časovým plánům.</p></div>
+                                            </div>
+                                            <div class="flex flex-1 gap-3 rounded-lg bg-transparent p-4 flex-col border border-primary/50">
+                                                <div class="text-primary text-2xl"><i class="fas fa-handshake"></i></div>
+                                                <div class="flex flex-col gap-1"><h3 class="text-white text-base font-bold leading-tight" id="advantage3H_new">Odpovědnost</h3><p class="text-steel-gray text-sm font-normal leading-normal" id="advantage3P_new">Přebíráme plnou odpovědnost za kvalitu a úspěch projektů.</p></div>
+                                            </div>
+                                            <div class="flex flex-1 gap-3 rounded-lg bg-transparent p-4 flex-col border border-primary/50">
+                                                <div class="text-primary text-2xl"><i class="fas fa-shield-alt"></i></div>
+                                                <div class="flex flex-col gap-1"><h3 class="text-white text-base font-bold leading-tight" id="advantage4H_new">Bezpečnost</h3><p class="text-steel-gray text-sm font-normal leading-normal" id="advantage4P_new">Nejvyšší bezpečnostní standardy jsou u nás prioritou.</p></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </section>
+
+                            <!-- 3. SEKCE PROJEKTY/REFERENCE -->
+                            <section id="projects" class="py-20 bg-background-dark text-white">
+                                <div class="p-4">
+                                    <h2 class="text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em] text-white border-b-2 border-primary pb-2 inline-block" id="projectsH2">Naše Klíčové Projekty</h2>
+                                    <p class="mt-4 text-lg text-gray-400 max-w-2xl" id="projectsPerex">Důvěra v kvalitu se měří zkušenostmi. Zde je výběr náročných průmyslových projektů, kde naši specialisté uplatnili své dovednosti.</p>
+                                    
+                                    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        
+                                        <!-- Projekt 1: Jaderné elektrárny -->
+                                        <div class="bg-[#283039] p-6 rounded-lg border-l-4 border-primary hover:bg-[#3b4754] transition-colors">
+                                            <h3 class="text-2xl font-bold mb-2" id="project1H">Jaderné elektrárny a energetika</h3>
+                                            <p class="text-steel-gray mb-3" id="project1Perex">Montáže a svařování vysoce kritických potrubních systémů a konstrukcí, kde je vyžadována nulová tolerance k chybám a nejvyšší certifikace (např. v Temelíně, Dukovanech, Mochovcích).</p>
+                                            <span class="text-sm text-primary font-bold" id="project1Type">Svařování (TIG/MAG), Montáže</span>
+                                        </div>
+
+                                        <!-- Projekt 2: Těžké strojírenství (Huisman) -->
+                                        <div class="bg-[#283039] p-6 rounded-lg border-l-4 border-primary hover:bg-[#3b4754] transition-colors">
+                                            <h3 class="text-2xl font-bold mb-2" id="project2H">Offshore a Těžké strojírenství (Huisman)</h3>
+                                            <p class="text-steel-gray mb-3" id="project2Perex">Práce na masivních jeřábových systémech a těžkých lodních konstrukcích. Přesné zámečnické a svářečské práce pro nadnárodní klienty jako Huisman a Hoogen.</p>
+                                            <span class="text-sm text-primary font-bold" id="project2Type">Zámečnictví, Svařování, Kapacitní výpomoc</span>
+                                        </div>
+
+                                        <!-- Projekt 3: Konstrukční zakázky (Mělník) -->
+                                        <div class="bg-[#283039] p-6 rounded-lg border-l-4 border-primary hover:bg-[#3b4754] transition-colors">
+                                            <h3 class="text-2xl font-bold mb-2" id="project3H">Velkokapacitní průmyslové komory</h3>
+                                            <p class="text-steel-gray mb-3" id="project3Perex">Výroba a montáž rozměrných komor a technologických celků pro elektrárny a teplárny v ČR (např. Mělník) a Německu. Složité sestavy a finální instalace.</p>
+                                            <span class="text-sm text-primary font-bold" id="project3Type">Montáže, Ocelové konstrukce</span>
+                                        </div>
+
+                                        <!-- Projekt 4: Zakázky dle potřeby -->
+                                        <div class="bg-[#283039] p-6 rounded-lg border-l-4 border-primary hover:bg-[#3b4754] transition-colors">
+                                            <h3 class="text-2xl font-bold mb-2" id="project4H">Mezinárodní projekty a údržba</h3>
+                                            <p class="text-steel-gray mb-3" id="project4Perex">Pravidelná údržba a nasazení montérů na krátkodobé i dlouhodobé projekty po celé Evropě. Rychlá reakce a dodání kvalifikované síly.</p>
+                                            <span class="text-sm text-primary font-bold" id="project4Type">Montáže, Kapacitní výpomoc, Zámečnictví</span>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    <div class="text-center mt-12">
+                                        <a href="#contact" class="flex min-w-[84px] max-w-xs mx-auto cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors" id="ctaProjects">
+                                            <span class="truncate">Zadat poptávku na Váš projekt</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 4. SEKCE KARIÉRA -->
+                            <section id="career" class="py-20 bg-background-dark text-white">
+                                <div class="p-4">
+                                    <div class="flex min-h-[500px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-8 lg:p-16" 
+                                        style='background-image: linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxlF6D8N_zdLpdZMIYWf8NWty09iqQF2KUuvJbaOuQpRwb08PaTytoH38g1P338oTkrm1_o4Ov62xcdHiow0d3Dhq3_Skc14_xiYQJLTCCzRLwnwEUvdvonhnH9mWqaqNn8gCXKPG1q4PuaJW7wcKtVZSnX3odLqIhJQr1qc-565CTdBJKHcw0aqsDyVjAiEl4SR6diCSyWdUnVosBCbIZBb8fv8Zk2kzNNDyKK12le2pF5RZjtEtgnp1scRPCyxXLYlE345ck8Dc2");'>
+                                        
+                                        <div class="flex flex-col gap-4 text-center max-w-3xl relative z-10">
+                                            <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] md:text-6xl" id="careerH1">Staň se součástí našeho týmu svářečů, montérů a zámečníků.</h1>
+                                            <h2 class="text-gray-200 text-base font-normal leading-normal md:text-xl" id="careerH2">Získej stabilní práci v Česku i zahraničí.</h2>
+                                        </div>
+                                        
+                                        <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors relative z-10" 
+                                        href="https://www.akademieprace.cz" target="_blank" id="ctaCareerLarge">
+                                            <span class="truncate">Vyplnit přihlášku</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 5. SEKCE KONTAKT -->
+                            <section id="contact" class="py-20 bg-background-dark text-white">
+                                <div class="p-4">
+                                    <h1 class="text-4xl lg:text-5xl font-black leading-tight tracking-[-0.033em] text-white border-b-2 border-primary pb-2 inline-block" id="contactH1">Kontaktujte nás</h1>
+                                    <p class="mt-4 text-lg text-gray-400" id="contactPerex">Spojte se s námi pro cenovou nabídku, dotazy nebo jakékoli jiné informace.</p>
+                                </div>
+                                
+                                <div class="mt-12 grid grid-cols-1 lg:grid-cols-5 gap-12 p-4">
+                                    <!-- A. Kontaktní formulář -->
+                                    <div class="lg:col-span-3">
+                                        <form action="mailto:obchod@dualworks.cz" class="space-y-6" enctype="text/plain" method="post">
+                                            <div>
+                                                <label class="flex flex-col">
+                                                    <p class="text-white text-base font-medium leading-normal pb-2" id="labelName">Jméno/Firma</p>
+                                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border-[#3b4754] bg-[#1c2127] focus:border-primary h-14 placeholder:text-gray-400 p-[15px] text-base font-normal leading-normal" 
+                                                        name="Jmeno/Firma" id="inputName" placeholder="Zadejte své jméno nebo název firmy" required="" type="text"/>
+                                                </label>
+                                            </div>
+                                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                                <label class="flex flex-col">
+                                                    <p class="text-white text-base font-medium leading-normal pb-2" id="labelEmail">Email</p>
+                                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border-[#3b4754] bg-[#1c2127] focus:border-primary h-14 placeholder:text-gray-400 p-[15px] text-base font-normal leading-normal" 
+                                                        name="Email" id="inputEmail" placeholder="Zadejte svůj email" required="" type="email"/>
+                                                </label>
+                                                <label class="flex flex-col">
+                                                    <p class="text-white text-base font-medium leading-normal pb-2" id="labelPhone">Telefon</p>
+                                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border-[#3b4754] bg-[#1c2127] focus:border-primary h-14 placeholder:text-gray-400 p-[15px] text-base font-normal leading-normal" 
+                                                        name="Telefon" id="inputPhone" placeholder="Zadejte své telefonní číslo" type="tel"/>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <label class="flex flex-col">
+                                                    <p class="text-white text-base font-medium leading-normal pb-2" id="labelMessage">Zpráva/Poptávka</p>
+                                                    <textarea class="form-input flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border-[#3b4754] bg-[#1c2127] focus:border-primary min-h-36 placeholder:text-gray-400 p-[15px] text-base font-normal leading-normal" 
+                                                            name="Zprava" id="inputMessage" placeholder="Napište nám zprávu nebo poptávku" required=""></textarea>
+                                                </label>
+                                            </div>
+                                            <div>
+                                                <button class="w-full flex items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-dark" 
+                                                        type="submit" id="buttonSubmit">
+                                                    Odeslat poptávku
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                    <!-- B. Kontaktní informace a mapa -->
+                                    <div class="lg:col-span-2 space-y-8">
+                                        <div class="p-6 rounded-lg bg-[#283039]">
+                                            <h3 class="text-xl font-bold text-white" id="infoH3">Kontaktní informace</h3>
+                                            <div class="mt-4 space-y-3 text-gray-300">
+                                                <p class="font-semibold text-white" id="infoCompanyName">DualWorks s.r.o.</p>
+                                                <p id="infoAddress">Na Folimance 15, Praha 2</p>
+                                                <p id="infoICO">IČO: 23397071</p>
+                                                <p id="infoTel">Tel: <a class="text-primary hover:underline" href="tel:+420735128003">+420 735 128 003</a></p>
+                                                <p id="infoEmail">Email: <a class="text-primary hover:underline" href="mailto:obchod@dualworks.cz">obchod@dualworks.cz</a></p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden">
+                                            <iframe allowfullscreen="" data-location="Praha 2, Czech Republic" height="100%" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.753308351543!2d14.425118677021743!3d50.07185011497217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b947c61c36069%3A0x63351d54e4c27f05!2sNa%20Folimance%202153%2F15%2C%20120%2000%20Praha%202-Vinohrady!5e0!3m2!1scs!2scz!4v1700688663851!5m2!1scs!2scz" style="border:0;" width="100%"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </main>
+                
+                <!-- FOOTER -->
+                <footer class="flex flex-col gap-6 px-5 py-10 text-center @container bg-[#283039]">
+                    <div class="flex flex-wrap items-center justify-center gap-6 @[480px]:flex-row @[480px]:justify-around">
+                        <a class="text-[#9dabb9] text-sm font-normal leading-normal min-w-40" href="#">Ochrana osobních údajů</a>
+                        <a class="text-[#9dabb9] text-sm font-normal leading-normal min-w-40" href="#">Podmínky užití</a>
+                        <a class="text-[#9dabb9] text-sm font-normal leading-normal min-w-40" href="#contact" id="footerContact">Kontakt</a>
+                    </div>
+                    <div class="text-white text-lg font-bold">
+                        <p id="footerAddress">Na Folimance 15, Praha 2</p>
+                        <p id="footerTel">Tel: +420 735 128 003</p>
+                        <p id="footerEmail">Email: obchod@dualworks.cz</p>
+                    </div>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#"><i class="fab fa-linkedin fa-2x text-[#9dabb9] hover:text-primary"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f fa-2x text-[#9dabb9] hover:text-primary"></i></a>
+                    </div>
+                    <p class="text-[#9dabb9] text-sm font-normal leading-normal">© 2023 DualWorks s.r.o. Všechna práva vyhrazena.</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- KLÍČOVÝ SOUBOR PRO DYNAMICKÝ OBSAH A JAZYKY -->
+<script src="scripts.js"></script>
+</body>
+</html>
